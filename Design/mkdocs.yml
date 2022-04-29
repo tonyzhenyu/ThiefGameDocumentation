@@ -2,7 +2,7 @@ site_name: The Thief Game Design Documentation
 site_author: 'hzy'
 site_description: 'The Thief Game Design Documentation'
 
-edit_uri: 'Design/docs/'
+#edit_uri: 'Design/docs/'
 
 nav:
 - 主要设计: index.md
@@ -26,7 +26,7 @@ nav:
   - 战斗: 战斗模块\redme.md
   - 武器: 武器模块\redme.md
   - 角色控制: 角色控制模块\角色控制模块.md
-  - 道具模块: 道具模块\redme.md
+  - 道具模块: 道具模块\道具模块.md
 - '相机':
   - 相机: 相机模块\相机模块.md
 

@@ -1,0 +1,74 @@
+<mxfile host="app.diagrams.net" modified="2022-04-26T15:52:36.516Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50" etag="zO6lL3wmOzZkgQO54poq" version="17.4.6" type="github">
+  <diagram id="6nFUmDgd83BYB75dv16k" name="Page-1">
+    <mxGraphModel dx="1373" dy="797" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HRkeSsOjyrvqCMzM1o_D-1" target="HRkeSsOjyrvqCMzM1o_D-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-1" value="玩家准备" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="327.5" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HRkeSsOjyrvqCMzM1o_D-2" target="HRkeSsOjyrvqCMzM1o_D-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-2" value="创建房间" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="532.5" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HRkeSsOjyrvqCMzM1o_D-5" target="HRkeSsOjyrvqCMzM1o_D-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-10" value="房间不存在" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HRkeSsOjyrvqCMzM1o_D-9">
+          <mxGeometry x="-0.3425" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HRkeSsOjyrvqCMzM1o_D-5" target="HRkeSsOjyrvqCMzM1o_D-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-13" value="房间存在" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HRkeSsOjyrvqCMzM1o_D-12">
+          <mxGeometry x="-0.3308" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-5" value="查找现有房间" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="322.5" y="270" width="130" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HRkeSsOjyrvqCMzM1o_D-11" target="HRkeSsOjyrvqCMzM1o_D-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-11" value="将玩家拉进未满的房间" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="490" width="135" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HRkeSsOjyrvqCMzM1o_D-16" target="HRkeSsOjyrvqCMzM1o_D-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="690" />
+              <mxPoint x="170" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-19" value="未满足开始游戏条件" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HRkeSsOjyrvqCMzM1o_D-18">
+          <mxGeometry x="-0.0682" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HRkeSsOjyrvqCMzM1o_D-16" target="HRkeSsOjyrvqCMzM1o_D-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-23" value="满足开始条件" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HRkeSsOjyrvqCMzM1o_D-21">
+          <mxGeometry x="0.2656" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-16" value="检查房间人数" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="323.25" y="630" width="128.5" height="126" as="geometry" />
+        </mxCell>
+        <mxCell id="HRkeSsOjyrvqCMzM1o_D-20" value="开始游戏" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="327.5" y="840" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

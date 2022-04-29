@@ -29,11 +29,11 @@ nav:
   - 道具模块: 道具模块/道具模块.md
 - '相机':
   - 相机: 相机模块/相机模块.md
-
-- '其他模块' :
+- '资源模块' :
   - 资源制作: 资源制作/redme.md
   - 资源补给模块: 资源补给模块/redme.md
-  - 阵营模块: 阵营模块/redme.md
+- '阵营模块':
+  - 阵营: 阵营模块/redme.md
 
 markdown_extensions:
   - admonition  # 提示块

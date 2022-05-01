@@ -19,8 +19,6 @@ nav:
   - 游戏界面: HUD模块/游戏界面.md
   - 地图界面: HUD模块/地图.md
   - 背包界面: HUD模块/背包.md
-- 'NPC':
-  - NPC模块: NPC/NPC.md
 - '对局流程控制模块' : 
   - '时间': 对局流程控制/游戏流程控制（时间）.md
   - '空间': 对局流程控制/游戏流程控制（空间）.md
@@ -34,6 +32,7 @@ nav:
   - 空投: 资源补给模块/补给.md
 - '阵营模块':
   - 阵营: 阵营模块/阵营.md
+  - NPC模块: NPC/NPC.md
 
 markdown_extensions:
   - admonition  # 提示块

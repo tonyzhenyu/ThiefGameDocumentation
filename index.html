@@ -1,0 +1,1506 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Thief Game Design Documentation">
+      
+      
+        <meta name="author" content="hzy">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.6">
+    
+    
+      
+        <title>The Thief Game Design Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.9d5733d3.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="The Thief Game Design Documentation" class="md-header__button md-logo" aria-label="The Thief Game Design Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Thief Game Design Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              主要设计
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="The Thief Game Design Documentation" class="md-nav__button md-logo" aria-label="The Thief Game Design Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    The Thief Game Design Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          主要设计
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        主要设计
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    游戏名字：鬼祟迷踪
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏名字：鬼祟迷踪">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    游戏开始
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    游戏背景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    游戏目的
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    游戏阵营
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    阵营能力
+  </a>
+  
+    <nav class="md-nav" aria-label="阵营能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    小偷
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    警察
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    游戏玩法概括
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    游戏对局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    通用行为
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    小偷
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    警察
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    普通人群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    地图要素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    道具：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    笔记
+  </a>
+  
+    <nav class="md-nav" aria-label="笔记">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    设施：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    策划文档
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    渲染文档
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    系统模块
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          用户登入
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="用户登入" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          用户登入
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%B8%B8%E6%88%8F%E5%85%A5%E5%8F%A3/%E6%B8%B8%E6%88%8F%E5%85%A5%E5%8F%A3%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E6%A1%88/" class="md-nav__link">
+        游戏入口
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          关卡
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="关卡" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          关卡
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%85%B3%E5%8D%A1%E6%A8%A1%E5%9D%97/%E5%85%B3%E5%8D%A1%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E6%A1%88/" class="md-nav__link">
+        关卡模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%85%B3%E5%8D%A1%E6%A8%A1%E5%9D%97/%E5%85%B3%E5%8D%A1%E7%AD%96%E5%88%92/" class="md-nav__link">
+        关卡规划
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%85%B3%E5%8D%A1%E6%A8%A1%E5%9D%97/%E5%9C%BA%E6%99%AF%E4%BA%A4%E4%BA%92/" class="md-nav__link">
+        场景交互
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E8%B5%84%E6%BA%90%E8%A1%A5%E7%BB%99%E6%A8%A1%E5%9D%97/%E8%A1%A5%E7%BB%99/" class="md-nav__link">
+        资源
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          声音
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="声音" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          声音
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%A3%B0%E6%95%88%E6%A8%A1%E5%9D%97/%E5%A3%B0%E6%95%88%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E6%A1%88/" class="md-nav__link">
+        声效模块
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          界面
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="界面" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          界面
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%9D%97/%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92/" class="md-nav__link">
+        匹配界面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HUD%E6%A8%A1%E5%9D%97/%E6%B8%B8%E6%88%8F%E7%95%8C%E9%9D%A2/" class="md-nav__link">
+        游戏界面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HUD%E6%A8%A1%E5%9D%97/%E5%9C%B0%E5%9B%BE/" class="md-nav__link">
+        地图界面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HUD%E6%A8%A1%E5%9D%97/%E8%83%8C%E5%8C%85/" class="md-nav__link">
+        背包界面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HUD%E6%A8%A1%E5%9D%97/%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
+        设置界面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HUD%E6%A8%A1%E5%9D%97/%E7%BB%93%E7%AE%97/" class="md-nav__link">
+        结算界面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HUD%E6%A8%A1%E5%9D%97/%E8%BD%AC%E5%9C%BA/" class="md-nav__link">
+        转场界面
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          游戏逻辑模块
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="游戏逻辑模块" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          游戏逻辑模块
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%AF%B9%E5%B1%80%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/%E6%B8%B8%E6%88%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%EF%BC%88%E6%97%B6%E9%97%B4%EF%BC%89/" class="md-nav__link">
+        时间
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%AF%B9%E5%B1%80%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/%E6%B8%B8%E6%88%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%EF%BC%88%E7%A9%BA%E9%97%B4%EF%BC%89/" class="md-nav__link">
+        空间
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          战斗模块
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="战斗模块" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          战斗模块
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%AD%A6%E5%99%A8%E6%A8%A1%E5%9D%97/%E6%AD%A6%E5%99%A8/" class="md-nav__link">
+        武器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E8%A7%92%E8%89%B2%E6%8E%A7%E5%88%B6%E6%A8%A1%E5%9D%97/%E8%A7%92%E8%89%B2%E6%8E%A7%E5%88%B6%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        角色控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E9%81%93%E5%85%B7%E6%A8%A1%E5%9D%97/%E9%81%93%E5%85%B7%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        道具
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%85%B3%E5%8D%A1%E6%A8%A1%E5%9D%97/%E5%9C%BA%E6%99%AF%E4%BA%A4%E4%BA%92/" class="md-nav__link">
+        场景交互
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          阵营模块
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="阵营模块" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          阵营模块
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E9%98%B5%E8%90%A5%E6%A8%A1%E5%9D%97/%E9%98%B5%E8%90%A5/" class="md-nav__link">
+        阵营
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NPC/NPC/" class="md-nav__link">
+        NPC模块
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9D%97/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        相机
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    游戏名字：鬼祟迷踪
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏名字：鬼祟迷踪">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    游戏开始
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    游戏背景
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    游戏目的
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    游戏阵营
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    阵营能力
+  </a>
+  
+    <nav class="md-nav" aria-label="阵营能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    小偷
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    警察
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    游戏玩法概括
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    游戏对局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    通用行为
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    小偷
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    警察
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    普通人群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    地图要素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    道具：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    笔记
+  </a>
+  
+    <nav class="md-nav" aria-label="笔记">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    设施：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    策划文档
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    渲染文档
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    系统模块
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>主要设计</h1>
+
+<h2 id="_1">游戏名字：鬼祟迷踪<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="_2">游戏开始<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>小偷通过选择入口进入城市 - 通过搜集城市内资源</li>
+<li>警察出生在警察大本营 - 通过出生配枪</li>
+<li>游戏开始一分钟后会向所有人广播包裹的指定位置（位置每局随机产生）</li>
+<li>第一个收集到包裹的人将会广播所有人，包裹已经被夺取</li>
+<li>警察发现并搜寻小偷 将其击毙</li>
+</ul>
+<h3 id="_3">游戏背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>罪恶都市，犯罪率高，毒品毒枭都市。
+入口过关检查。</p>
+
+<p>瘾君子，受委托于委托人，报酬是事后分一杯羹。
+故事发生在罪恶横行的城市，犯罪率高，来往的商人也专注于毒品生意。
+一些商人或委托人需要运送一批毒品到境外，由于城市守卫森严，于是委托一些有瘾君子运送包裹。</p>
+<p>警察早已通过卧底得知此计划，并且监听了全程的电话通信，得知委托人发出包裹的位置并派出警力进行通缉。</p>
+
+<h3 id="_4">游戏目的<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>小偷：争夺偷取指定包裹 逃脱</li>
+<li>警察：小偷全灭 将包裹运送回大本营</li>
+</ul>
+<h3 id="_5">游戏阵营<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>小偷/个人</li>
+<li>警察/团队</li>
+<li>普通/npc</li>
+</ul>
+<h3 id="_6">阵营能力<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="_7">小偷<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>伪装成npc</li>
+<li>角色</li>
+</ul>
+<h4 id="_8">警察<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>有不同能力的干员 可以寻踪觅迹</li>
+<li>拥有团队共享资金池 可以呼唤空头仓或无人机，</li>
+</ul>
+<hr />
+<h3 id="_9">游戏玩法概括<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>多人联机的游戏。</li>
+<li>玩家可以选择警察或小偷。</li>
+<li>游戏中有一个主要的包裹，包裹内藏着毒品思必得。</li>
+<li>小偷宗旨别被抓。</li>
+<li>警察守卫这座该死的城市。</li>
+</ul>
+<hr />
+<h3 id="_10">游戏对局<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>阵营人数比例：&lt;2:3&gt;</li>
+<li>警察阵营人数：2</li>
+<li>小偷阵营人数：3</li>
+<li>对局时间节点：<ul>
+<li>一分钟生成包裹位置，警察窃听委托人信息，小偷通过接听委托人信息。时间起伏。</li>
+<li>15分钟后，警察通过调动其他城市，增大警力，此时会在各种出入口设置小偷无法通过的碍。并且会随着时间的增加逐渐增大推进力。</li>
+<li>超过规定时间双方阵营没达到胜利条件，算作平局。</li>
+</ul>
+</li>
+<li>对局结束：
+按照各角色进行计算。</li>
+</ul>
+<hr />
+<h3 id="_11">通用行为<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>基础移动：前后左右移动</li>
+<li>跳跃：跳跃</li>
+<li>
+<p>爬墙：攀爬</p>
+</li>
+<li>
+<p>跌落伤害：在高处跌落时会受伤</p>
+</li>
+</ul>
+<h3 id="_12">小偷<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>出生：初始无物资。（小偷出生）</li>
+<li>补给：通过搜集委托人在城市内留下的物资进行办事。（小偷补给）</li>
+<li>进城：选择城市入口。（小偷进城）</li>
+<li>伪装：可以通过伪装化成普通人。（小偷伪装）</li>
+<li>包裹：夺取包裹后，会获得包裹中其中一份。（小偷强心针，增益道具，会持续一段间）</li>
+<li>行踪：小偷经过的地方会留下行踪。</li>
+<li>逃脱：带着唯一的包裹逃脱出城市，代表着游戏的结束。</li>
+<li>击杀：击杀警察没有奖励，击杀普通人会暴露小偷位置。</li>
+<li>低调：可以留下更少的痕迹，但是会减慢行动速度。</li>
+<li>濒死：小偷血条被清空后，会进入濒死状态，但是可以自我救助。</li>
+<li>死亡：会留下死亡之箱，保留死亡之前的所有物资。（死亡之箱，小偷开拿道具，警察拿经济）</li>
+<li>胜利：带着包裹逃脱成功。</li>
+<li>失败：死亡即失败。</li>
+</ul>
+<h3 id="_13">警察<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>出生：在警察局选择配枪和物资。（警察出生）</li>
+<li>补给：通过呼叫资源仓或者购买资源车获得资源。（警察补给）</li>
+<li>经济：有经济共享池。（警察团队经济）</li>
+<li>觅迹：可以通过知微见著识别小偷踪迹（警察信息）</li>
+<li>团队：警察可以共享视野和地图。</li>
+<li>干员：警察有不一样的干员，带来不一样的能力。</li>
+<li>击杀：击杀小偷会带来经济奖励，击杀普通人会被移动限制。所有小偷被击杀也代表游结束。</li>
+<li>包裹：抢夺包裹并运送回警察大本营后，代表游戏结束。</li>
+<li>濒死：血条被清空后，会进入濒死状态，但是只能通过队友救助。</li>
+<li>死亡：会留下死亡之箱，存留死亡之前的所有物资。</li>
+<li>胜利：包裹送回警察局，或者小偷被杀光。</li>
+<li>失败：所有警察被杀死或包裹被送走。</li>
+</ul>
+<h3 id="_14">普通人群<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>出生：会生成于城市各个角落。（普通出生）</li>
+<li>死亡：会被杀死。（普通人死亡）</li>
+<li>警察：被警察杀死后周围的人会围攻警察堵住警察的位置。（警察杀普通人）</li>
+<li>小偷：被小偷杀死后周围的人会受到惊吓而逃亡。（小偷杀普通人）</li>
+</ul>
+<hr />
+<h3 id="_15">地图要素<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>据点 ：警察大本营。</li>
+<li>可行动区域 ：天台，楼内，地面，地下。</li>
+<li>交互物体：管道，绳索，梯子，蹦床，资源箱。</li>
+</ul>
+<hr />
+<h3 id="_16">道具：<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li>护盾：可以回复的护甲值，生成于地图资源箱，或警察大本营。</li>
+<li>电池：可以用于回复护甲值，生成于地图资源箱，或警察大本营。</li>
+<li>血包：可用于回复血量，生成于地图资源箱，或警察大本营。</li>
+<li>投掷物：可用于投掷造成范围伤害，生成于地图资源箱，或警察大本营。</li>
+<li>枪械：武器，生成于地图资源箱，或警察大本营。</li>
+<li>子弹：子弹，生成于地图资源箱，或警察大本营。</li>
+<li>毒品思必得：强化小偷，获取随机一个超级英雄的能力，持续一段时间。</li>
+</ul>
+<p>包裹：
+当游戏开始一分钟后会，生成于地图某处并被全员广播其位置。
+取得包裹的小偷，会获得一份思必得。
+取得包裹的人一旦被击杀，包裹会掉落。
+被警察运送回警察大本营后，结束游戏。
+被小偷运送出城后，游戏结束。</p>
+
+<p>劣质毒品
+补给品里面也有劣质毒品，瘾君子们吸了之后，就算是如此劣质的仿造品也可以激发亡抗拒的欲望。
+我给你们准备了一些劣质思必得，虽然比不上上品，但是对于你们这些完不成委托的是绰绰有余——委托人书</p>
+
+<p>纳米强心针：
+不可复制和购买，始于警察出生背包。
+每人配备一针，在警察濒临死亡时可以对警察使用。
+在警察死亡时可以掉落。由于小偷的生理结构被毒药改造，小偷无法适应这种强心针。</p>
+
+<hr />
+<h3 id="_17">笔记<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li>警察 - 寻血猎犬 足迹 共享资金池（直升机，无人机，障碍，补给仓） 多种干员 </li>
+<li>
+<p>小偷 - 角色性能高 信息不共享 角色外貌能改变</p>
+</li>
+<li>
+<p>枪性能一致 试验场 </p>
+</li>
+<li>
+<p>包裹 - 对于警察 没搜索之前 不会高亮</p>
+</li>
+<li>
+<p>包裹 - 小偷 能知道，包裹的位置 能准确找到包裹。</p>
+<ul>
+<li>小偷捡到包裹之后，增益。体现包裹的牛逼。</li>
+</ul>
+</li>
+<li>
+<p>委托人想要运送包裹，报酬是包裹内部分，</p>
+<ul>
+<li>会有路人npc 小偷可以潜行 小偷和npc长得一样 警察需要扫描才能知道足迹。</li>
+</ul>
+</li>
+<li>
+<p>地图是一座城市 入口：小偷要从各地方潜入 。</p>
+</li>
+<li>
+<p>潜入 先不复活 </p>
+</li>
+<li>
+<p>背景：罪恶都市</p>
+</li>
+</ul>
+<h4 id="_18">设施：<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li>警察大本营 警察的人从大本营出来</li>
+<li>普通房子</li>
+<li>地铁站</li>
+<li>下水道</li>
+<li>大风扇</li>
+<li>天台</li>
+<li>天台</li>
+<li>楼内</li>
+<li>地面</li>
+<li>
+<p>地下</p>
+</li>
+<li>
+<p>出入口一致。</p>
+</li>
+<li>
+<p>出口</p>
+<ul>
+<li>收费站</li>
+<li>下水道</li>
+<li>码头</li>
+</ul>
+</li>
+<li>
+<p>路线：</p>
+<ul>
+<li>屋檐</li>
+<li>房顶</li>
+<li>绳索</li>
+<li>下水道</li>
+<li>高速公路</li>
+<li>爬墙</li>
+</ul>
+</li>
+<li>
+<p>包裹：每一局都不一样的功能。变成超级英雄的某一种能力，持续一段时间。</p>
+</li>
+<li>
+<p>小偷：抢夺唯一的包裹并运送出去</p>
+</li>
+<li>
+<p>警察目的：小偷全灭 或者 运送包裹到警察大本营</p>
+</li>
+<li>
+<p>战斗：</p>
+</li>
+<li>
+<p>武器一致 枪一样 </p>
+</li>
+<li>
+<p>地上可以捡到物资 </p>
+</li>
+<li>警察不能开物资箱子</li>
+<li>
+<p>警察从本营配枪</p>
+</li>
+<li>
+<p>濒死状态 - 可自救（扣血量上限）</p>
+</li>
+<li>
+<p>手雷- 铝热剂 碎片手雷</p>
+</li>
+<li>
+<p>枪 - 手枪 自动步枪</p>
+</li>
+<li>
+<p>警察驱散人群</p>
+</li>
+<li>
+<p>警察杀普通人 - 惩罚 经济减少 人群障碍</p>
+</li>
+<li>小偷杀普通人 - 惩罚 人群解散 </li>
+</ul>
+<hr />
+<h3 id="_19">策划文档<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li>游戏入口：登录系统（注册登录）</li>
+<li>匹配模块：匹配系统（选阵营和角色，匹配）</li>
+<li>关卡模块：有不同的关卡（和apex一样有不同的地图轮换）</li>
+<li>对局流程控制模块：游戏流程控制 出生点 入口 出口 时间流程</li>
+<li>资源补给模块：生成资源</li>
+<li>NPC：NPC</li>
+<li>角色控制模块：角色控制器</li>
+<li>相机模块：相机控制器</li>
+<li>阵营模块：团队或个人</li>
+<li>道具模块：道具 投掷物 血包</li>
+<li>武器模块：改变角色行为</li>
+<li>战斗模块：伤害 血量</li>
+<li>HUD模块：显示UI</li>
+<li>声效模块：播放声音</li>
+<li>资源制作：动画，特效，音效，建筑模型，天空盒，2D精灵，UI</li>
+</ul>
+<hr />
+<h3 id="_20">渲染文档<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UI渲染</li>
+<li>天空盒渲染</li>
+<li>雾效渲染</li>
+<li>角色渲染</li>
+<li>地形渲染</li>
+<li>静态模型渲染</li>
+<li>屏幕空间渲染</li>
+<li>光照烘焙</li>
+</ul>
+<hr />
+<h3 id="_21">系统模块<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<ul>
+<li>游戏入口</li>
+<li>匹配模块</li>
+<li>关卡模块</li>
+<li>对局流程控制</li>
+<li>资源补给模块</li>
+<li>NPC</li>
+<li>角色控制模块</li>
+<li>相机模块</li>
+<li>阵营模块</li>
+<li>道具模块</li>
+<li>武器模块</li>
+<li>战斗模块</li>
+<li>HUD模块</li>
+<li>声效模块</li>
+<li>资源制作</li>
+</ul>
+<hr />
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="%E6%B8%B8%E6%88%8F%E5%85%A5%E5%8F%A3/%E6%B8%B8%E6%88%8F%E5%85%A5%E5%8F%A3%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E6%A1%88/" class="md-footer__link md-footer__link--next" aria-label="Next: 游戏入口" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              游戏入口
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e87a5f81.min.js"></script>
+      
+    
+  </body>
+</html>
